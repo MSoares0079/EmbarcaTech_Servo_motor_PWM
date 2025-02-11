@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Matheus Soares Ladeia Alves",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -12.85,
+      "left": -25.25,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -11.6, "left": 105.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "servo1:GND", "pico:GND.8", "black", [ "h-19.2", "v-19.2" ] ],
+    [ "pico:3V3", "servo1:V+", "red", [ "h38.71", "v9.6", "h19.2" ] ],
+    [ "pico:GP22", "servo1:PWM", "orange", [ "h19.51", "v-48", "h38.4" ] ]
+  ],
+  "dependencies": {}
+}
